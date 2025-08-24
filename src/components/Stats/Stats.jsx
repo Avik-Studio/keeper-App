@@ -1,6 +1,6 @@
 // src/components/Stats/Stats.jsx
 import React from 'react';
-import { FileText, Search, Filter, TrendingUp } from 'lucide-react';
+import { FileText, Search, TrendingUp } from 'lucide-react';
 
 /**
  * Stats component showing note statistics and search info
