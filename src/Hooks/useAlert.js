@@ -8,6 +8,11 @@ import { useState, useCallback } from 'react';
 const useAlert = () => {
   const [alerts, setAlerts] = useState([]);
 
+  // Remove specific alert
+  const removeAlert = useCallback((id) => {
+    setAlerts(prev => prev.filter(alert => alert.id !== id));
+  }, []);
+
   // Show alert function
   const showAlert = useCallback((message, type = 'info', duration = 3000) => {
     const id = Date.now() + Math.random();
@@ -27,11 +32,6 @@ const useAlert = () => {
 
     return id;
   }, [removeAlert]);
-
-  // Remove specific alert
-  const removeAlert = useCallback((id) => {
-    setAlerts(prev => prev.filter(alert => alert.id !== id));
-  }, []);
 
   // Clear all alerts
   const clearAlerts = useCallback(() => {

@@ -1,5 +1,5 @@
 // src/components/UI/Alert/Alert.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { CheckCircle, XCircle, AlertCircle, Info, X } from 'lucide-react';
 import { ALERT_TYPES, ANIMATION_DURATIONS } from '../../Utils/constants';
 
@@ -41,12 +41,12 @@ const AlertItem = ({ alert, onRemove }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleRemove = () => {
+  const handleRemove = useCallback(() => {
     setIsLeaving(true);
     setTimeout(() => {
       onRemove();
     }, ANIMATION_DURATIONS.FAST);
-  };
+  }, [onRemove]);
 
   // Auto-remove after duration
   useEffect(() => {
