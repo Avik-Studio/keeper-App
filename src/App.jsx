@@ -30,8 +30,8 @@ const App = () => {
   const [notes, setNotes] = useLocalStorage(STORAGE_KEYS.NOTES, []);
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useLocalStorage(STORAGE_KEYS.VIEW_MODE, VIEW_MODES.GRID);
-  const [sortBy, setSortBy] = useState('date');
-  const [sortOrder, setSortOrder] = useState('desc');
+  const [sortBy, _setSortBy] = useState('date');
+  const [sortOrder, _setSortOrder] = useState('desc');
   const [isLoading, setIsLoading] = useState(false);
 
   // Alert Management
@@ -41,7 +41,7 @@ const App = () => {
     showError,
     showInfo,
     removeAlert,
-    clearAlerts
+    _clearAlerts
   } = useAlert();
 
   // Debounced search to improve performance
@@ -150,7 +150,7 @@ const App = () => {
         }, 1000);
       }
     }
-  }, [notes.length, searchTerm]);
+  }, [notes.length, searchTerm, showInfo]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
