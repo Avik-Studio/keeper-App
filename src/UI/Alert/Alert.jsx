@@ -54,7 +54,7 @@ const AlertItem = ({ alert, onRemove }) => {
       const timer = setTimeout(handleRemove, alert.duration);
       return () => clearTimeout(timer);
     }
-  }, [alert.duration]);
+  }, [alert.duration, handleRemove]);
 
   // Get alert styling based on type
   const getAlertStyles = () => {

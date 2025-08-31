@@ -110,7 +110,7 @@ export const FEATURE_FLAGS = {
   ENABLE_TAGS: false
 };
 
-export default {
+const CONSTANTS = {
   APP_CONFIG,
   STORAGE_KEYS,
   VIEW_MODES,
@@ -124,3 +124,5 @@ export default {
   API_ENDPOINTS,
   FEATURE_FLAGS
 };
+
+export default CONSTANTS;

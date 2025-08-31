@@ -26,7 +26,7 @@ const useAlert = () => {
     }, duration);
 
     return id;
-  }, []);
+  }, [removeAlert]);
 
   // Remove specific alert
   const removeAlert = useCallback((id) => {

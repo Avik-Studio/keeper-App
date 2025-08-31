@@ -30,8 +30,8 @@ const App = () => {
   const [notes, setNotes] = useLocalStorage(STORAGE_KEYS.NOTES, []);
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useLocalStorage(STORAGE_KEYS.VIEW_MODE, VIEW_MODES.GRID);
-  const [sortBy, _setSortBy] = useState('date');
-  const [sortOrder, _setSortOrder] = useState('desc');
+  const [sortBy, _setSortBy] = useState('date'); // eslint-disable-line no-unused-vars
+  const [sortOrder, _setSortOrder] = useState('desc'); // eslint-disable-line no-unused-vars
   const [isLoading, setIsLoading] = useState(false);
 
   // Alert Management
@@ -41,7 +41,7 @@ const App = () => {
     showError,
     showInfo,
     removeAlert,
-    _clearAlerts
+    _clearAlerts // eslint-disable-line no-unused-vars
   } = useAlert();
 
   // Debounced search to improve performance
