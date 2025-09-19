@@ -15,11 +15,15 @@ function CreateArea(props) {
     }
     function submitNote(event) {
       event.preventDefault();
-        props.onAdd(notes);
-        setNotes({  
-            title: "",
-            content: ""
-        });
+      if (notes.title.trim() === "" || notes.content.trim() === "") {
+        alert("Please fill in both title and content!");
+        return;
+      }
+      props.onAdd(notes);
+      setNotes({  
+          title: "",
+          content: ""
+      });
     }
   return (
     <div className="create-area">
