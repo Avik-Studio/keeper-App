@@ -1,53 +1,48 @@
-import { useState } from "react";
 import React from "react";
+import { useState } from "react";
 
 function CreateArea(props) {
-    const [notes, setNotes] = useState({
-        title: "",
-        content: ""
-    });
-    function handleChange(event) {
-        const { name, value } = event.target;
-        setNotes((prevNotes) => ({
-            ...prevNotes,
-            [name]: value
-        }));
-    }
-    function submitNote(event) {
-      event.preventDefault();
-      if (notes.title.trim() === "" || notes.content.trim() === "") {
-        alert("Please fill in both title and content!");
-        return;
-      }
-      props.onAdd(notes);
-      setNotes({  
-          title: "",
-          content: ""
-      });
-    }
-  return (
-    <div className="create-area">
-      <form className="note-form" onSubmit={submitNote}>
-        <input 
-          type="text" 
-          className="note-title" 
-          placeholder="Title" 
-          name="title" 
-          value={notes.title} 
-          onChange={handleChange} 
-        />
-        <textarea 
-          className="note-content" 
-          name="content" 
-          onChange={handleChange} 
-          value={notes.content} 
-          rows="3" 
-          placeholder="Take a note..." 
-        />
-        <button className="add-btn" type="submit">Add</button>
-      </form>
-    </div>
-  );
-}
+  const [note , setNote] = useState({
+    title:"",
+    content:""
+  });
 
+  function Change_funtion(event){
+    const {name, value} = event.target;
+    setNote((prevNote) =>({
+      ...prevNote,
+      [name]:value
+    }))
+  }
+
+  function FormSubmite(event) {
+    event.preventDefault();
+    if (note.title.trim()==="" || note.content.trim() === "") {
+      alert("Please fill in both title and content!");
+      return;
+    }
+    props.onAdd(note);
+    setNote({
+      title:"",
+      content:""
+    });
+  }
+
+return(
+  <div className="creteArea">
+    <form className="notefrom" onSubmit={FormSubmite}>
+      <input type="text" className="note_title" placeholder="title" name="title" value={note.title} onChange={Change_funtion}/> 
+        <textarea 
+          className="note_content" 
+          name="content" 
+          onChange={Change_funtion} 
+          value={note.content} 
+          rows="3" 
+          placeholder="Take a note.......!" 
+        />
+    <button className="add-btn" type="submit">Add</button>
+    </form>
+  </div>
+);
+}
 export default CreateArea;

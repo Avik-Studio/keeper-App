@@ -19,7 +19,7 @@ body {
     transition: border-color 0.3s;
 }
 
-.note_content:focus {
+.note-content:focus {
     border-color: #f5ba13;
 }
 
@@ -29,7 +29,7 @@ body {
     flex-direction: column;
 }
 
-.app_container {
+.app-container {
     flex: 1 0 auto;
     display: flex;
     flex-direction: row;
@@ -54,7 +54,7 @@ body {
     color: #fff;
     font-family: "mclaren", cursive;
 }
-.main {
+.main-content {
     padding-top: 100px;
     width: 100%;
     display: flex;
@@ -63,7 +63,7 @@ body {
     flex: 1 0 auto;
 }
 
-.note-container {
+.notes-container {
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -118,7 +118,7 @@ body {
     box-shadow: 0 4px 16px 0 rgba(0,0,0,0.22);
 }
 
-.creteArea {
+.create-area {
     width: 100%;
     max-width: 600px;
     margin: 30px auto 20px;
@@ -126,7 +126,7 @@ body {
     position: relative;
 }
 
-.notefrom {
+.note-form {
     background: white;
     border-radius: 8px;
     padding: 20px;
@@ -136,7 +136,7 @@ body {
     align-items: stretch;
 }
 
-.note_title {
+.note-title {
     width: 100%;
     border: 1px solid #ddd;
     padding: 12px 15px;
@@ -149,11 +149,11 @@ body {
     transition: border-color 0.3s;
 }
 
-.note_title:focus {
+.note-title:focus {
     border-color: #f5ba13;
 }
 
-.note_content {
+.note-content {
     width: 100%;
     border: 1px solid #ddd;
     resize: vertical;
@@ -168,7 +168,7 @@ body {
     transition: border-color 0.3s;
 }
 
-.note_content:focus {
+.note-content:focus {
     border-color: #f5ba13;
 }
 
@@ -209,7 +209,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .note-container {
+    .notes-container {
         flex-direction: column;
         align-items: center;
     }
@@ -220,7 +220,7 @@ body {
         margin-bottom: 15px;
     }
     
-    .creteArea {
+    .create-area {
         padding: 0 10px;
     }
     
