@@ -168,6 +168,27 @@ body {
     transition: border-color 0.3s;
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 .note_content:focus {
     border-color: #f5ba13;
 }
@@ -184,7 +205,35 @@ body {
     font-weight: 500;
     transition: all 0.3s;
 }
+.modal-btns{
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.modal-btn{
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
 
+.modal-btn.cancel{
+    background-color: #e0e0e0;
+}
+.modal-btn.cancel:hover {
+  background-color: #d0d0d0;
+}
+
+.modal-btn.confirm {
+  background-color: red;
+  color: white;
+}
+.modal-btn.confirm:hover {
+  background-color: rgb(245, 0, 0);
+}
 .add-btn:hover {
     background-color: #e5aa03;
     transform: scale(1.02);

@@ -1,7 +1,8 @@
 import React   from "react";
 import "./style.css";
-function Footer() {
 
+
+const Footer =()=> {
   return (
     <footer className="footer">
       <p>Copyright ⓒ 2025</p>

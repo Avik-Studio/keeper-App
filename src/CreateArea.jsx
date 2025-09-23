@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
 
-function CreateArea(props) {
+const CreateArea = (props) =>{
   const [note , setNote] = useState({
     title:"",
     content:""
   });
 
-  function Change_funtion(event){
+  const Change_funtion = (event) =>{
     const {name, value} = event.target;
     setNote((prevNote) =>({
       ...prevNote,
@@ -15,7 +15,7 @@ function CreateArea(props) {
     }))
   }
 
-  function FormSubmite(event) {
+  const FormSubmite = (event) => {
     event.preventDefault();
     if (note.title.trim()==="" || note.content.trim() === "") {
       alert("Please fill in both title and content!");
